@@ -7,7 +7,7 @@ template < class T >
 class QUEUE : public LIST<T>
 {
     public:
-    QUEUE();
+    QUEUE(int Q_Size);
     int enqueue(const T &item);
     int dequeue(T &item);
     bool isQueueEmpty() const;

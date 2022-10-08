@@ -1,15 +1,16 @@
 #include "LIST.h"
 
-template <class T>
-LIST<T>::LIST()
-{
-    //l_size = ((size > 0) && (size < 1000)) ? size : 10;
-    ListPtr = new T[l_size];
-    l_last = -1;
-    l_first = *ListPtr;
-}
-template <class T>
-LIST<T>::~LIST() { delete[] ListPtr; }
+//template <class T>
+//LIST<T>::LIST(int size)
+//{
+//    l_size = ((size > 0) && (size < 1000)) ? size : 10;
+//    ListPtr = new T[l_size];
+//    l_last = -1;
+//    l_first = *ListPtr;
+//}
+//template <class T>
+//LIST<T>::~LIST() { delete[] ListPtr; }
+
 template <class T>
 bool LIST<T>::isEmpty() const { return l_first == -1; }
 template <class T>
@@ -59,3 +60,13 @@ void LIST<T>::SetListSize(const int size)
 {
     this -> l_size;
 }
+template <class T>
+void LIST<T>::PrintList() const
+{
+    for (int Counter = 0; Counter < this->l_size; Counter++)
+    {
+        std::cout << ListPtr[Counter] << "  ";
+    }
+    std::cout << std::endl;
+}
+
