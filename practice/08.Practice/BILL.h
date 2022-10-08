@@ -15,7 +15,9 @@ constexpr int GasFactor = 10;
 
 constexpr int ElectricityFactor = 5;
 
-// abstract template class
+// abstract template class, strateg interface
+//The Strategy interface encapsulates the calculation variations and can be implemented by all algorithms simultaneously.
+
 template <class T, class M>
 class BILL
 {
@@ -23,7 +25,7 @@ public:
     virtual float CalculateBill() = 0;
 };
 
-// derived template class
+// derived template class, concrete strategy A
 template <class T, class M>
 class WATER : public BILL<T, M>
 {
@@ -52,7 +54,7 @@ private:
     T mConsumption;
 };
 
-// derived template class
+// derived template class, concrete strategy B
 template <class T, class M>
 class GAS : public BILL<T, M>
 {
@@ -68,7 +70,7 @@ private:
     T mConsumption;
 };
 
-// derived template class
+// derived template class, concrete strategy C
 template <class T, class M>
 class Electricity : public BILL<T, M>
 {
@@ -85,6 +87,7 @@ private:
 };
 
 // context class
+//For interacting with the Context, the generic interface represents just one way of triggering ConcreteStrategy algorithms.
 template <class T, class M>
 class CitizenBill
 {
@@ -112,7 +115,7 @@ M Bill_For_All(std::vector<CitizenBill<T, M> *> BillVec)
     return retVal;
 }
 
-// to reuse the same vector for all kind of bills
+// Context method to reuse the same vector for all kind of bills
 template <class T, class M>
 void Clear_Bill_Vec(std::vector<CitizenBill<T, M> *> &BillVec)
 {
