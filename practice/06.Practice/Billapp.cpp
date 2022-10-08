@@ -2,13 +2,13 @@
 
 int main ()
 {
-    WATER<long> water1(20000);
+    WATER<long,float> water1(20000);
     std::cout << "water: " << water1.CalculateBill() << std::endl;
-    GAS<long> gas1(20000);
+    GAS<long,float> gas1(20000);
     std::cout << "gas: " << gas1.CalculateBill() << std::endl;
-    METALL<long> metall1(20000);
+    METALL<long,float> metall1(20000);
     std::cout << "metall: " << metall1.CalculateBill() << std::endl;
-    std::vector<BILL<long>*> AllBillsLong;
+    std::vector<BILL<long,float>*> AllBillsLong;
     AllBillsLong.push_back(&water1);
     AllBillsLong.push_back(&gas1);
     AllBillsLong.push_back(&metall1);
@@ -18,11 +18,11 @@ int main ()
     std::cout << "..............." << std::endl;
 
     Clear_Bill_Vec(AllBillsLong);
-    WATER<long> water2(10000);
+    WATER<long,float> water2(10000);
     std::cout << "water: " << water2.CalculateBill() << std::endl;
-    GAS<long> gas2(10000);
+    GAS<long,float> gas2(10000);
     std::cout << "gas: " << gas2.CalculateBill() << std::endl;
-    METALL<long> metall2(10000);
+    METALL<long,float> metall2(10000);
     std::cout << "metall: " << metall2.CalculateBill() << std::endl;
     
     AllBillsLong.push_back(&water2);
@@ -36,13 +36,13 @@ int main ()
 
 
 
-    WATER<unsigned int> water3(150);
+    WATER<unsigned int,float> water3(150);
     std::cout << "water: " << water3.CalculateBill() << std::endl;
-    GAS<unsigned int> gas3(150);
+    GAS<unsigned int,float> gas3(150);
     std::cout << "gas: " << gas3.CalculateBill() << std::endl;
-    METALL<unsigned int> metall3(150);
+    METALL<unsigned int,float> metall3(150);
     std::cout << "metall: " << metall3.CalculateBill() << std::endl;
-    std::vector<BILL<unsigned int>*> AllBillsint;
+    std::vector<BILL<unsigned int,float>*> AllBillsint;
     AllBillsint.push_back(&water3);
     AllBillsint.push_back(&gas3);
     AllBillsint.push_back(&metall3);

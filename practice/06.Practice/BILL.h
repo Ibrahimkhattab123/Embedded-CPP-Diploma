@@ -14,13 +14,13 @@ class BILL
     T mConsumption;
 };
 
-template <class T>
-class WATER : public BILL<T>
+template <class T, class M>
+class WATER : public BILL<T,M>
 {
     public:
     WATER(T consumption): mConsumption(consumption){}
     WATER(){}
-    float CalculateBill() override
+    M CalculateBill() override
     {
         T retVal = 0;
         if (mConsumption >= 300000)
@@ -40,36 +40,36 @@ class WATER : public BILL<T>
     private:
     T mConsumption;
 };
-template <class T>
-class GAS : public BILL<T>
+template <class T, class M>
+class GAS : public BILL<T,M>
 {
     public:
    GAS(T consumption): mConsumption(consumption){}
    GAS(){}
-    float CalculateBill() override
+    M CalculateBill() override
     {
         return mConsumption * 10;
     }
     private:
     T mConsumption;
 };
-template <class T>
-class METALL : public BILL<T>
+template <class T, class M>
+class METALL : public BILL<T,M>
 {
     public:
    METALL(T consumption): mConsumption(consumption){}
    METALL(){}
-    float CalculateBill() override
+    M CalculateBill() override
     {
         return mConsumption * 5;
     }
     private:
     T mConsumption;
 };
-template <class T>
-float Bill_For_All (std::vector <BILL<T> *> BillVec)
+template <class T, class M>
+M Bill_For_All (std::vector <BILL<T,M> *> BillVec)
 {
-    float retVal = 0;
+    M retVal = 0;
     for (auto BillElem: BillVec)
     {
         retVal += BillElem -> CalculateBill();
@@ -78,8 +78,8 @@ float Bill_For_All (std::vector <BILL<T> *> BillVec)
     
 }
 //to reuse the same vector for all kind of bills
-template <class T>
-void Clear_Bill_Vec (std::vector <BILL<T> *> &BillVec)
+template <class T, class M>
+void Clear_Bill_Vec (std::vector <BILL<T,M> *> &BillVec)
 {
    BillVec.clear();
     
