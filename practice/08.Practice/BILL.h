@@ -103,7 +103,7 @@ public:
 private:
     BILL<T, M> *BillObj;
 };
-
+//Context method
 template <class T, class M>
 M Bill_For_All(std::vector<CitizenBill<T, M> *> BillVec)
 {
@@ -115,7 +115,7 @@ M Bill_For_All(std::vector<CitizenBill<T, M> *> BillVec)
     return retVal;
 }
 
-// Context method to reuse the same vector for all kind of bills
+// To reuse the same vector for all kind of bills
 template <class T, class M>
 void Clear_Bill_Vec(std::vector<CitizenBill<T, M> *> &BillVec)
 {
