@@ -4,7 +4,7 @@
 //Coponents are: 1) an abstract class (Inteface) which represents various strategies (Object)
 //               2) Objects which have the real imolementation of the stratrgies
 //               3) a context class which is responsable of changing the algorithm by giving a specific object 
-              
+//Strategy pattern enables selecting an algorithm at run time               
                
 
 //abstract
