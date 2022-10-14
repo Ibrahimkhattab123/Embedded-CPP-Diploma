@@ -9,7 +9,7 @@ class LIST
 {
 public:
     LIST();
-    ~LIST(){}
+    ~LIST();
     bool isEmpty() const;
     void Insert_Node_At_Front(const NODE_T &Value);
     void Remove_Node_From_Front(NODE_T &Value);

@@ -4,7 +4,23 @@ template <typename NODE_T>
 LIST<NODE_T>::LIST() : FirstPtr(nullptr), LastPtr(nullptr)
 {
 }
+template <typename NODE_T>
+LIST<NODE_T>::~LIST()
+{
+    if(!isEmpty())
+    {
+        LinkedListNode<NODE_T> *NodePtr = this->FirstPtr;
+        LinkedListNode<NODE_T> *TempPtr = nullptr;
 
+        while(NodePtr != nullptr)
+        {
+            TempPtr = NodePtr;
+            std::cout << "Destroy Node:" << TempPtr->nValue << std::endl;
+            NodePtr = NodePtr->NextPtr;
+            delete TempPtr;
+        } 
+    }
+}
 template <typename NODE_T>
 bool LIST<NODE_T>::isEmpty() const
 {
