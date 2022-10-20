@@ -6,16 +6,15 @@
 class CurrentCollector
 {
 public:
-    CurrentCollector(std::unique_ptr<IFiberSensor>&& _FiberSensor) 
-                        : FiberSensor(std::move(_FiberSensor))
+    CurrentCollector(std::unique_ptr<IFiberSensor> &&_FiberSensor)
+        : FiberSensor(std::move(_FiberSensor))
     {
     }
     void Reading();
     void Writing();
+
 private:
     std::unique_ptr<IFiberSensor> FiberSensor;
 };
-
-
 
 #endif // CURRENT_COLLECTOR_H
