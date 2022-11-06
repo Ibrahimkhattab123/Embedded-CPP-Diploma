@@ -6,57 +6,55 @@
 
 class PageObject
 {
-    public:
-    virtual void addItem(PageObject l){}
-    virtual void removeItem(){}
-    virtual void deleteItem(PageObject l){}
+public:
+    virtual void addItem(PageObject l) {}
+    virtual void removeItem() {}
+    virtual void deleteItem(PageObject l) {}
 };
 class Page : public PageObject
 {
-    public:
-    Page(std::string name ): PageName(name){}
+public:
+    Page(std::string name) : PageName(name) {}
     virtual void addItem(PageObject l)
     {
-        std::cout << "add item to page: "<< this -> PageName << std::endl;
+        std::cout << "add item to page: " << this->PageName << std::endl;
     }
     virtual void removeItem()
     {
-        std::cout << "remove item from page: "<< this -> PageName  << std::endl;
+        std::cout << "remove item from page: " << this->PageName << std::endl;
     }
     virtual void deleteItem(PageObject l)
     {
-        std::cout << "delete item from page: "<< this -> PageName  << std::endl;
+        std::cout << "delete item from page: " << this->PageName << std::endl;
     }
-    private:
+
+private:
     std::string PageName;
 };
 class Copy : public PageObject
 {
-    public:
-    Copy(std::string name ): CopyName(name){}
-    void addCopyElement(PageObject l )
+public:
+    Copy(std::string name) : CopyName(name) {}
+    void addCopyElement(PageObject l)
     {
         CopyVec.push_back(l);
     }
     virtual void addItem(PageObject l)
     {
-        std::cout << "add item to copy: " << this -> CopyName << std::endl;
+        std::cout << "add item to copy: " << this->CopyName << std::endl;
     }
     virtual void removeItem()
     {
-        std::cout << "remove item from copy: " << this -> CopyName  << std::endl;
+        std::cout << "remove item from copy: " << this->CopyName << std::endl;
     }
     virtual void deleteItem(PageObject l)
     {
-        std::cout << "delete item from copy: " << this -> CopyName << std::endl;
+        std::cout << "delete item from copy: " << this->CopyName << std::endl;
     }
-    private:
-    std::vector<PageObject> CopyVec;  
+
+private:
+    std::vector<PageObject> CopyVec;
     std::string CopyName;
-  
 };
 
-
-
-
-#endif //COMPOSE_H
+#endif // COMPOSE_H
